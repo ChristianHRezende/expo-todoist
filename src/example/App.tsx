@@ -1,12 +1,12 @@
-import {Welcome} from '@/features/Welcome/Welcome/Welcome';
-import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Text, View} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text>Carlinhos</Text>
+      <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
-      <Welcome />
     </View>
   );
 }
