@@ -6,6 +6,7 @@ import welcomeWelcomeGuyImage from '@/assets/images/welcome-welcome-guy.png';
 
 import {Link} from '@/components/Link/Link';
 import {Button} from 'react-native-paper';
+import {router} from 'expo-router';
 
 export const Welcome = () => {
   return (
@@ -22,13 +23,14 @@ export const Welcome = () => {
         Make your todo in the note and manage your priority activity in daily
         life to achieve goals.
       </Text>
+
       <Button
         testID="welcome-welcome-get-started"
         mode="contained"
         onPress={() => {
-          Alert.alert('WIP');
+          router.navigate('/auth/login'); // navegando rota para login com route
         }}>
-        Test
+        Login
       </Button>
       <Link
         testID="welcome-welcome-sign-in"
