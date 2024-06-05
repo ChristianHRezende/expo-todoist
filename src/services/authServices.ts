@@ -3,6 +3,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from 'firebase/auth';
+// MOCK - isolar a camada externa do teste
 
 export type SignInParams = {
   email: string;

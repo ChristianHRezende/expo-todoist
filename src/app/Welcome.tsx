@@ -2,8 +2,10 @@ import {Image} from 'expo-image';
 import {Alert, StyleSheet, Text, View} from 'react-native';
 //@ts-ignore
 import welcomeWelcomeGuyImage from '@/assets/images/welcome-welcome-guy.png';
-import {Button} from '@/components/Button/Button';
+// import {Button} from '@/components/Button/Button';
+
 import {Link} from '@/components/Link/Link';
+import {Button} from 'react-native-paper';
 
 export const Welcome = () => {
   return (
@@ -22,12 +24,12 @@ export const Welcome = () => {
       </Text>
       <Button
         testID="welcome-welcome-get-started"
-        title={'Get Started'}
-        variant="contained"
+        mode="contained"
         onPress={() => {
           Alert.alert('WIP');
-        }}
-      />
+        }}>
+        Test
+      </Button>
       <Link
         testID="welcome-welcome-sign-in"
         title={'Already have an account? Sign In'}
