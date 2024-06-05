@@ -1,8 +1,8 @@
-import {Welcome} from '@/features/Welcome/Welcome/Welcome';
+import {Welcome} from './Welcome';
 import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
-export default function App() {
+export default function Page() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
