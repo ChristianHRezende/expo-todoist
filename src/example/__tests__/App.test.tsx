@@ -1,5 +1,5 @@
 import {render, screen} from '@/testUtils/testUtils';
-import App from './App';
+import App from '../App';
 /**
  * Integration Tests
  */

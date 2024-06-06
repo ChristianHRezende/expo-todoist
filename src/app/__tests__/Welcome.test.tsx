@@ -1,5 +1,5 @@
 import {render, screen} from '@/testUtils/testUtils';
-import {Welcome} from './Welcome';
+import {Welcome} from '../Welcome';
 
 it('must render welcome-title text', () => {
   render(<Welcome />);
