@@ -1,5 +1,5 @@
 import {render, screen, userEvent} from '@/testUtils/testUtils';
-import {SignIn} from './SignIn';
+import {SignIn} from '../SignIn';
 
 function setup() {
   return render(<SignIn />);
