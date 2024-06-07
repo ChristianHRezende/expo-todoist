@@ -3,7 +3,9 @@ import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, View} from 'react-native';
 
 export default function Page() {
+  // return main page
   return (
+    // statusBar controller behavior status bar
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Welcome />

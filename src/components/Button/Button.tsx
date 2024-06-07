@@ -5,19 +5,22 @@ import {
   TouchableHighlight,
   TouchableHighlightProps,
 } from 'react-native';
+// import from react native for use botton
 
 interface ButtonProps extends TouchableHighlightProps {
-  variant?: 'contained' | 'text';
-  title: string;
+  // define button with props TouchableHighlightProps and prop for interface
+  variant?: 'contained' | 'text'; // define button witch color botton (conatiner) or only text
+  title: string; //text displayed
 }
 
 export const Button = ({
-  variant = 'text',
-  title,
-  ...restProps
+  // return component clicking
+  variant = 'text', // defined conatiner or text
+  title, // style for text
+  ...restProps // acept all functionatily defined in interface
 }: ButtonProps) => {
   return (
-    <TouchableHighlight
+    <TouchableHighlight //create touch sensitive area, is defined for the variant
       style={variant === 'contained' ? styles.contained : {}}
       {...restProps}>
       <Text style={variant === 'text' ? styles.text : styles.containedText}>

@@ -7,7 +7,7 @@ import {
 import '@/utils/firebaseConfig';
 import {theme} from '@/styles/theme';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient(); // response manage global state of aplication
 
 export default function MainLayout() {
   return (

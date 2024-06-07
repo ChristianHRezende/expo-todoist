@@ -6,9 +6,12 @@ import {
 import {PaperProvider} from 'react-native-paper';
 import {theme} from '@/styles/theme';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient(); // create cliente for react-query used in the test
+
+// ??? não entendi ...
 
 const AllTheProviders = ({children}: React.PropsWithChildren) => {
+  // encapsulates the components during the test and provides necessary providers
   return (
     <RQQueryClientProvider client={queryClient}>
       <PaperProvider theme={theme}>{children}</PaperProvider>

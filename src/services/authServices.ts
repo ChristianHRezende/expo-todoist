@@ -10,6 +10,8 @@ export type SignInParams = {
   password: string;
 };
 
+// defined function params signIn and signUp
+// recived object with params and auth user and email
 export async function signIn({email, password}: SignInParams) {
   const auth = getAuth();
   return signInWithEmailAndPassword(auth, email, password);

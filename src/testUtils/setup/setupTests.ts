@@ -1,6 +1,8 @@
 import '@testing-library/react-native/extend-expect';
 
-//mock
+//mock used in test integration or united witch react and firebase
+
+// isoled img,  not to effect renderized
 jest.mock('expo-image', () => ({
   Image: () => null,
 }));
@@ -19,3 +21,10 @@ jest.mock('firebase/auth', () => {
       }),
   };
 });
+
+/*
+Este mock substitui o módulo firebase/auth do Firebase com um objeto que simula as funções getAuth, signInWithEmailAndPassword e createUserWithEmailAndPassword.
+getAuth retorna uma string simulando uma instância do serviço de autenticação.
+signInWithEmailAndPassword e createUserWithEmailAndPassword retornam promessas resolvidas com o valor 201, simulando a execução bem-sucedida dessas operações de autenticação e criação de usuário.
+
+*/

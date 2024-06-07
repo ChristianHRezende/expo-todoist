@@ -8,15 +8,17 @@ import {Link} from '@/components/Link/Link';
 import {Button} from 'react-native-paper';
 import {router} from 'expo-router';
 
+// function component
 export const Welcome = () => {
   return (
     <View style={styles.container}>
-      <Image
+      <Image // return img
         ref={null}
         source={welcomeWelcomeGuyImage}
         style={styles.image}
         placeholder="welcome guy image"
         contentFit="contain"
+        // render with style the text
       />
       <Text>Let's Organize Your Note TODO</Text>
       <Text style={styles.secondaryText}>
@@ -24,7 +26,7 @@ export const Welcome = () => {
         life to achieve goals.
       </Text>
 
-      <Button
+      <Button //button login and navegation for login
         testID="welcome-welcome-get-started"
         mode="contained"
         onPress={() => {
@@ -32,7 +34,7 @@ export const Welcome = () => {
         }}>
         Login
       </Button>
-      <Link
+      <Link // navegation for sign-in
         testID="welcome-welcome-sign-in"
         title={'Already have an account? Sign In'}
         href={'auth/signIn'}

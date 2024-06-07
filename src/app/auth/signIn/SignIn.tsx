@@ -8,10 +8,12 @@ import {SignInParams, signIn} from '@/services/authServices';
 
 export const SignIn = () => {
   const defaultFormValues = {
+    // initial state
     email: '',
     password: '',
   };
   const form = useForm({
+    // manage form state and validation the values
     resolver: zodResolver(schema),
     defaultValues: defaultFormValues,
   });
@@ -20,15 +22,17 @@ export const SignIn = () => {
   // server data management
   // useQuery ou useMutation
   const mutateSignIn = useMutation({
+    // use mutate for call singIn whith the params
     mutationFn: (params: SignInParams) => signIn(params),
   });
 
   const handleSubmitForm = form.handleSubmit(async values => {
+    // mutation async use  mutateSingIn for Login
     mutateSignIn.mutateAsync(values, {
       onSuccess: response => {
         console.log('success');
         Alert.alert('success');
-        form.reset(defaultFormValues);
+        form.reset(defaultFormValues); // reset form
       },
       onError: error => {
         console.log(error);
@@ -39,12 +43,12 @@ export const SignIn = () => {
 
   return (
     <View style={styles.container}>
-      <Controller
+      <Controller //use reack hook form for render components
         control={form.control}
         name="email"
         render={field => (
           <>
-            <TextInput
+            <TextInput // use of react native paper
               testID="welcome-sign-in-input-email"
               mode="outlined"
               label="email"
