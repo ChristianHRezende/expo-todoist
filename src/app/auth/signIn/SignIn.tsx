@@ -13,7 +13,7 @@ export const SignIn = () => {
     password: '',
   };
   const form = useForm({
-    // manage form state and validation the values
+    // managed form state and validation the values
     resolver: zodResolver(schema),
     defaultValues: defaultFormValues,
   });

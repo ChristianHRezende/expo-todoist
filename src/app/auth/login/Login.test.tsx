@@ -5,8 +5,8 @@ function setup() {
   return render(<Login />);
 }
 
-it('render text', async () => {
+it('must input email', async () => {
   setup(); // renderizar
-  const element = screen.getByText('render-pag-login'); // pegar elemento
+  const element = screen.getByText('texto'); // pegar elemento
   expect(element).toBeOnTheScreen(); // pegar elemento
 });
