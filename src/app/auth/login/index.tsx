@@ -1,9 +1,11 @@
-import {View} from 'react-native';
+import {Alert, View} from 'react-native';
 import {Button, HelperText, TextInput} from 'react-native-paper';
 import {StyleSheet} from 'react-native';
 import {Controller, useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import schema from './schema';
+import {useMutation} from '@tanstack/react-query';
+import {LoginParams, logIn} from '@/services/authServices';
 
 export const Login = () => {
   const defaultFormValues = {
@@ -11,6 +13,9 @@ export const Login = () => {
     password: '',
   };
 
+  const mutateLogIn = useMutation({
+    mutationFn: (params: LoginParams) => logIn(params),
+  });
   // gerencia e muda estado de volta para default
   const form = useForm({
     resolver: zodResolver(schema),
@@ -18,10 +23,17 @@ export const Login = () => {
   });
 
   const handleLoginSubmit = form.handleSubmit(async values => {
-    console.log(values.email, values.password);
+    mutateLogIn.mutateAsync(values, {
+      onSuccess: Response => {
+        console.log('sucess');
+        Alert.alert('success');
+      },
+      onError: error => {
+        console.log(error);
+        Alert.alert('error' + error);
+      },
+    });
   });
-
-  // fazer a parte do mutate que n entendi, e fazer os testes
 
   return (
     <View style={styles.contained}>
@@ -54,8 +66,8 @@ export const Login = () => {
           <TextInput
             testID="password-log-in-input"
             mode="outlined"
-            label="Senha"
-            placeholder="Senha"
+            label="Password"
+            placeholder="Password"
             onChangeText={field.onChange}
             value={field.value}
             secureTextEntry={true}

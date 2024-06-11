@@ -26,3 +26,13 @@ export async function signUp({email, password}: SignUpParams) {
   const auth = getAuth();
   return createUserWithEmailAndPassword(auth, email, password);
 }
+
+export type LoginParams = {
+  email: string;
+  password: string;
+};
+
+export async function logIn({email, password}: LoginParams) {
+  const auth = getAuth();
+  return signInWithEmailAndPassword(auth, email, password);
+}
