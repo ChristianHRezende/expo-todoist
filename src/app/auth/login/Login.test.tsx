@@ -1,8 +1,8 @@
 import {render, screen, userEvent} from '@/testUtils/testUtils';
-import {Login} from './index';
+import LoginPage from '.';
 
 function setup() {
-  return render(<Login />);
+  return render(<LoginPage />);
 }
 
 it('must input email', async () => {

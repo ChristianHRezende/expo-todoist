@@ -1,5 +1,5 @@
 import {Image} from 'expo-image';
-import {Alert, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 //@ts-ignore
 import welcomeWelcomeGuyImage from '@/assets/images/welcome-welcome-guy.png';
 // import {Button} from '@/components/Button/Button';
